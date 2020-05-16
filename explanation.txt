@@ -1,0 +1,118 @@
+
+Problem1: Sqaure Root of Integer
+    
+    Explanation: Ive used binary search algorithm. Since we need to find the floor 
+        value of square root unless its a perfect square, we store a floored
+        value when the square of middle element is less than the target.   
+    
+    Complexity:
+    1. while left <= right:                                     ---- O(logn)
+    2.      middle = left + right // 2                          
+    3.      if square of middle = target return middle
+    4.      else if it is less than target then store it as 
+            floored and update left
+    5.      else update right
+    6. return floored 
+    This binary search loop will take O(logn) time as half elements are discarded
+    and O(logn) space for the binary search iterative stack. n= number of elements 
+
+Problem2: Rotated Array Search
+    
+    Explanation: We use a modfied binary search. We check for a few more conditions 
+        before discarding half of the elements. 
+    
+    Complexity:
+    1. while left <= right:                                     ---- O(logn)
+    2.      middle = left + right // 2                          
+    3.      if list[middle] = target return middle
+    4.      if left array is sorted 
+    5.          if target lies in left array drop right array
+    6.          else drop left array
+    7.      if right array is sorted
+    8.          if target lies in right array drop left array
+    9.          else drop right array
+    10. return -1
+    This binary search loop will take O(logn) time as we are still dscarding 
+    half elements in every iteration. Space complexity will also be O(logn) in
+    correspondence with the binary search.  n = number of elements 
+
+Problem3: Rearrange Digits
+    
+    Explanation: First we perform merge sort(descending) on the array and then
+        add elements in the two numbers iteratively by incrementing the digit
+        space.   
+    
+    Complexity: 
+    1. Merge sort                               ---- O(nlogn)
+    2. for loop for dstributing the digits      ---- O(n) 
+    This code will give O(nlogn + O(n) =O(nlogn) time complexity due to the 
+    merge sort algorithm. Space complexity is O(n) for the merge sort.
+    n= number of elements 
+        
+Problem4: Sort 012
+    
+    Explanation: Since only single traversal was allowed, we sorted the array 
+        in place with exchanging all 0's to the start and 2's to the back. This 
+        will put 1's in their place automatically.  
+    
+    Complexity:
+    1. while temp <= back_index                                     ---- O(n)
+    2.      if temp = 0 exchange with element at front index        ---- O(1)
+    3.          increment front index and temp                      ---- O(1)
+    4.      else if temp = 2 exchange with element at back index    ---- O(1)
+    5.          decrement back index and  increment temp            ---- O(1)
+    6.      else  increment temp                                    ---- O(1)
+    The time complexity is O(n) + O(1) = O(n) as the sorting is done in place.
+    Space complexity is O(n) as we only use the array of size n.
+    n= number of elements
+    
+Problem5: Autocomplete with Tries
+    
+    Explanation: We have used two classes Trie which has two methods insert and find
+    and TrieNode which has insert and Suffixes method.     
+    
+    Complexity:
+    1. Time -  
+    Insert and Find methods = O(n) as they iterate over the characters.
+    Suffixes method = O(m * n) as it iterates over all children and their children
+    as well.   
+    
+    2. Space - 
+    Insert = O(n) as all nodes are stored as temp before assigning them.
+    Suffixes = O(m * n) to store all the chars 
+    n= number of elements
+    m = number of children
+        
+Problem6: Max and Min 
+    
+    Explanation: Iterating over the list to find the max and min elements, we 
+        store and update two variables each having max and min value. This is 
+        done in single traversal. 
+    
+    Complexity:
+    1. Time complexity -- O(n) linear time 
+    2. Space complexity -- O(1) storing only max and min.
+        
+Problem7: Router with trie 
+    
+    Explanation: Implementation of web requests routing with trie implementation.
+        Using three classes - 
+        Router: Wraps all the methods.
+        RouteTrieNode: creates a new node with children and default handler as None.
+        RouteTrie: creates a trie with Insert and find methods.
+            Insert:- create a new path for each part separated by '/'. Assigning
+                handler when no new part.
+            Find:- Traverses through each part separated by '/'. returning 
+                handler when no new part. 
+          
+    Complexity:
+    1. Time - 
+        insert: O(n) where n is the number of parts separated by '/' in path.
+        find: O(n) where n is the number of parts separated by '/' in path.
+    2. Space - 
+        insert: O(n) as path_seg occupies n where n is the number of parts 
+            separated by '/' in path.
+        find: O(n) as path_seg occupies n where n is the number of parts 
+            separated by '/' in path.
+    
+    

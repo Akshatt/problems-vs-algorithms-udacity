@@ -1,4 +1,6 @@
 def sqrt(number):
+    if number < 0 or not isinstance(number,int) :
+        return None
     if number == 0 or number ==1:
         return number
     
@@ -26,4 +28,6 @@ print ("Pass" if  (4 == sqrt(16)) else "Fail")
 print ("Pass" if  (7 == sqrt(50)) else "Fail")
 print ("Pass" if  (6 == sqrt(48)) else "Fail")
 print ("Pass" if  (5 == sqrt(27)) else "Fail")
-
+print ("Pass" if  (None == sqrt(-32)) else "Fail")
+print ("Pass" if  (None == sqrt(32.5)) else "Fail")
+print ("Pass" if  (None == sqrt(-32.5)) else "Fail")

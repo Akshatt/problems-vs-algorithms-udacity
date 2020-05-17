@@ -1,4 +1,3 @@
-
 Problem1: Sqaure Root of Integer
     
     Explanation: Ive used binary search algorithm. Since we need to find the floor 
@@ -14,7 +13,8 @@ Problem1: Sqaure Root of Integer
     5.      else update right
     6. return floored 
     This binary search loop will take O(logn) time as half elements are discarded
-    and O(logn) space for the binary search iterative stack. n= number of elements 
+    and O(1) for space complexity as binary search is done iteratively. 
+    n= number of elements 
 
 Problem2: Rotated Array Search
     
@@ -33,8 +33,8 @@ Problem2: Rotated Array Search
     9.          else drop right array
     10. return -1
     This binary search loop will take O(logn) time as we are still dscarding 
-    half elements in every iteration. Space complexity will also be O(logn) in
-    correspondence with the binary search.  n = number of elements 
+    half elements in every iteration. Space complexity will be O(1) in
+    correspondence with the iterative binary search.  n = number of elements 
 
 Problem3: Rearrange Digits
     
@@ -63,7 +63,7 @@ Problem4: Sort 012
     5.          decrement back index and  increment temp            ---- O(1)
     6.      else  increment temp                                    ---- O(1)
     The time complexity is O(n) + O(1) = O(n) as the sorting is done in place.
-    Space complexity is O(n) as we only use the array of size n.
+    Space complexity is O(1) as no extra memory is being used.
     n= number of elements
     
 Problem5: Autocomplete with Tries
